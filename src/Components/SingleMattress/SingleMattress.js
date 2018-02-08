@@ -10,7 +10,7 @@ import { Wrapper, MainTitle, Main,
 
 import { Redirect } from 'react-router-dom';
 import DropDown from '../DropDrown/index';
-import ImageViewer from '../ImageViewer/ImageViewer';
+import ImageViewer from '../ImageViewer/ImageViewer2';
 
 const SingleMattress = ({ data: { loading, error, mattress } }) => {
   if (error) return <h1>Error fetching the Mattress!</h1>
@@ -26,7 +26,7 @@ const SingleMattress = ({ data: { loading, error, mattress } }) => {
     <h2>{mattress.name}</h2>
   </MainTitle>
   <Main>
-    <ImageViewer cover={mattress.coverImg.handle} img1={mattress.detail1.handle} img2={mattress.detail2.handle} />
+    <ImageViewer cover={mattress.coverImg} img1={mattress.detail1} img2={mattress.detail2} />
     <MainInfo>
       <StyledMarkDown source={mattress.features} escapeHtml={false} />
       <PriceWrapper>
@@ -74,12 +74,18 @@ export const singleMatt = gql`
       warranty
       coverImg {
         handle
+        width
+        height
       }
       detail1 {
         handle
+        width
+        height
       }
       detail2 {
         handle
+        width
+        height
       }
     }
   }

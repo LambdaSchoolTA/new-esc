@@ -2,9 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Helmet } from "react-helmet";
-import { AdjMarkdown, Main, StyledLink, H3, InfoWrapper, Img} from './AdjustableStyles';
-
-
+import { AdjMarkdown, Main, StyledLink, H3, InfoWrapper, Img} from './AdjustableStyles2';
 
 const AdjustableComponent = ({ data: {error, loading, Bases} }) => {
   if (error) return <div>{console.log(error)}</div>
@@ -19,12 +17,9 @@ const AdjustableComponent = ({ data: {error, loading, Bases} }) => {
         <StyledLink to={`/adjustable/${base.uri}`} key={base.id}>
           <H3>{base.fullName}</H3>
           <InfoWrapper>
-            <Img image={base.coverImg} maxWidth={4000} withWebp={true} fit="clip" blurryPlaceholder={false}/>
-            
+            <Img image={base.coverImg} maxWidth={500} withWebp={true} fit="clip" blurryPlaceholder={false}/>
             <AdjMarkdown source={base.features} escapeHtml={false} />
-            
           </InfoWrapper>
-          
         </StyledLink>
         
       ))}

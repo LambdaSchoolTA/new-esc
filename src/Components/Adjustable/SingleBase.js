@@ -7,7 +7,7 @@ import { Wrapper, MainTitle, Main, MainInfo, PriceWrapper,
         Article, StyledMarkDown, Profile }
         from '../SingleMattress/SingleMattStyles';
 import DropDown from '../DropDrown/index';
-import ImageViewer from '../ImageViewer/ImageViewer';
+import ImageViewer from '../ImageViewer/ImageViewer2';
 import { Redirect } from 'react-router-dom';
 
 const SingleBase = ({data: { loading, error, base}}) => {
@@ -24,7 +24,7 @@ const SingleBase = ({data: { loading, error, base}}) => {
           <h1>{base.fullName}</h1>
         </MainTitle>
         <Main>
-          <ImageViewer cover={base.coverImg.handle} img1={base.detail1.handle} img2={base.detail2.handle} />
+          <ImageViewer cover={base.coverImg} img1={base.detail1} img2={base.detail2} />
           <MainInfo>
             <StyledMarkDown source={base.features} escapeHtml={false} />
             <PriceWrapper>
@@ -68,12 +68,18 @@ query singleBase($uri: String) {
     warranty
     coverImg {
       handle
+      width
+      height
     }
     detail1 {
       handle
+      width
+      height
     }
     detail2 {
       handle
+      width
+      height
     }
   }
 }

@@ -23,7 +23,7 @@ const Sealy = ({ data: { loading, error, essentials, performance, premium} }) =>
           {essentials.mattresses.map((mattress) => (
               <LinkWrapper key={mattress.id}>
                 <StyledLink to={`/brands/sealy/${mattress.uri}`}>
-                  <MattImg src={`https://media.graphcms.com/resize=w:290,h:250,fit:clip/${mattress.coverImg.handle}`} alt="this"/>
+                  <MattImg image={mattress.coverImg} maxWidth={290} withWebp={true} fit="clip" blurryPlaceholder={false}/>
                   <SealyName>{mattress.brandName}<br/>{mattress.subBrand}<br/>{mattress.subName}</SealyName>
                 </StyledLink>
               </LinkWrapper>
@@ -31,7 +31,7 @@ const Sealy = ({ data: { loading, error, essentials, performance, premium} }) =>
             {performance.mattresses.map((mattress) => (
               <LinkWrapper key={mattress.id}>
                 <StyledLink to={`/brands/sealy/${mattress.uri}`}>
-                  <MattImg src={`https://media.graphcms.com/resize=w:290,h:250,fit:clip/${mattress.coverImg.handle}`} alt="this"/>
+                  <MattImg image={mattress.coverImg} maxWidth={290} withWebp={true} fit="clip" blurryPlaceholder={false}/>
                   <SealyName>{mattress.brandName}<br/>{mattress.subBrand}<br/>{mattress.subName}</SealyName>
                 </StyledLink>
               </LinkWrapper>
@@ -39,7 +39,7 @@ const Sealy = ({ data: { loading, error, essentials, performance, premium} }) =>
             {premium.mattresses.map((mattress) => (
               <LinkWrapper key={mattress.id}>
                 <StyledLink to={`/brands/sealy/${mattress.uri}`}>
-                  <MattImg src={`https://media.graphcms.com/resize=w:290,h:250,fit:clip/${mattress.coverImg.handle}`} alt="this"/>
+                  <MattImg image={mattress.coverImg} maxWidth={290} withWebp={true} fit="clip" blurryPlaceholder={false}/>
                   <SealyName>{mattress.brandName}<br/>{mattress.subBrand}<br/>{mattress.subName}</SealyName>
                 </StyledLink>
               </LinkWrapper>
@@ -63,6 +63,8 @@ export const sealyMattresses = gql`
       subName
       coverImg {
         handle
+        width
+        height
       }
     }
   },
@@ -75,6 +77,8 @@ export const sealyMattresses = gql`
       subName
       coverImg {
         handle
+        width
+        height
       }
     }
   },
@@ -87,6 +91,8 @@ export const sealyMattresses = gql`
       subName
       coverImg {
         handle
+        width
+        height
       }
     }
   }

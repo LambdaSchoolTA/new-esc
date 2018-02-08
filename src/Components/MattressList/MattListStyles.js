@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import FadeIn from '../../App';
+import GraphImg from 'graphcms-image'
 
 export const MainWrapper = styled.div`
   display: flex;
@@ -120,7 +121,7 @@ justify-content: space-between !important;
 color: #1565c0;
 `;
 
-export const MattImg = styled.img`
+export const MattImg = styled(GraphImg)`
 margin: auto;
 width: 120px;
   height: 100px;

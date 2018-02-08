@@ -2,14 +2,23 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel'; 
-import '../../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
-import './home.css';
-import { Main, SaleWrapper, SaleImg, TempurImg, SealyImg, StearnsImg } from './HomeStyles';
+import { Main, SaleWrapper} from './HomeStyles';
+import SaleComp from './SaleComp'
+import CarImg1 from './CarImg1';
+import CarImg2 from './CarImg2';
+import CarImg3 from './CarImg3'
+import styled from 'styled-components';
 
-import Sealy from '../../images/SealyLifestyleRatio.jpg';
-import Tempur from '../../images/TempurLifestyleRatio.jpg';
-import Stearns from '../../images/StearnsLifestyleRatio.jpg';
-import Sale from '../../images/grandOpening.png';
+const Sale = styled.div`
+  max-width: 240px;
+  max-height: 240px;
+  margin: auto;
+  background-color: #eb1c24;
+  @media(min-width: 600px) {max-height: 350px; max-width: 400px; }
+  @media(min-width: 768px) { max-width: 500px; max-height: 700px; }
+  @media(min-width: 1024px) { width: 500px !important; height: 800px; }
+`;
+
 
 const HomeComponent = () => {
   return (
@@ -23,22 +32,24 @@ const HomeComponent = () => {
       </Helmet>
       <Carousel
         infiniteLoop={true} autoPlay={true} showThumbs={false}
-        interval={7000} 
+        interval={6000} 
         centerMode={true}
         centerSlidePercentage={100}
         showStatus={false}
       >
-        <SaleWrapper>
-          <SaleImg src={Sale} alt="this"/>
+      <SaleWrapper>
+        <Sale>
+          <SaleComp/>
+        </Sale>
         </SaleWrapper>
-        <Link to='/brands/stearns'>
-          <StearnsImg src={Stearns} alt="this"/>
+        <Link to="/brands/stearns">
+          <CarImg1/>
         </Link>
-        <Link to='/brands/tempurpedic'>
-          <TempurImg src={Tempur} alt="this"/>
+        <Link to="/brands/tempurpedic">
+          <CarImg2/>
         </Link>
-        <Link to='/brands/sealy'>
-          <SealyImg src={Sealy} alt="this"/> 
+        <Link to="/brands/sealy">
+          <CarImg3/>
         </Link>
       </Carousel>
     </Main>

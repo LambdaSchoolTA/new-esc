@@ -29,7 +29,7 @@ const Tempur = ({ data: { loading, error, Brands} }) => {
             return ( 
               <LinkWrapper  key={mattress.id}>
                 <StyledLink to={`/brands/tempurpedic/${mattress.uri}`}>
-                  <MattImg src={`https://media.graphcms.com/resize=w:290,h:250,fit:clip/${mattress.coverImg.handle}`} alt="this"/>
+                  <MattImg image={mattress.coverImg} maxWidth={290} withWebp={true} fit="clip" blurryPlaceholder={false}/>
                   <Name>{mattress.brandName}<br/>{mattress.subBrand}<br/>{mattress.subName}</Name>
                 </StyledLink>
               </LinkWrapper>)
@@ -52,6 +52,8 @@ export const tempurMattresses = gql`
         subBrand
         coverImg {
           handle
+          width
+          height
         }
       }
     }

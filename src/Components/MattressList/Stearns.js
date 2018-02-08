@@ -25,7 +25,7 @@ const Stearns = ({ data: { loading, error, Brands} }) => {
             return (
               <LinkWrapper  key={mattress.id} className="animated fadeIn">
                 <StyledLink to={`/brands/stearns/${mattress.uri}`}>
-                  <MattImg src={`https://media.graphcms.com/resize=w:290,h:250,fit:clip/${mattress.coverImg.handle}`} alt="this"/>
+                  <MattImg image={mattress.coverImg} maxWidth={290} withWebp={true} fit="clip" blurryPlaceholder={false}/>
                   <StearnName>{mattress.brandName}<br/>{mattress.subBrand}<br/>{mattress.subName}</StearnName>
                 </StyledLink>
               </LinkWrapper>)
@@ -48,6 +48,8 @@ export const stearnsMattresses = gql`
         subBrand
         coverImg {
           handle
+          width
+          height
         }
       }
     }
