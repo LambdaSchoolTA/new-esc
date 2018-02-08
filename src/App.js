@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import styled, { injectGlobal, keyframes } from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 import MenuButton from './Components/FlyoutMenu/MenuButton';
 import Menu from './Components/FlyoutMenu/Menu';
@@ -51,19 +51,6 @@ const Container = styled.div`
   @media (min-width: 1400px) { width: 1370px; }
 `;
 
-const AppFadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-const MainWrapper = styled.div`
-  animation-duration: .5s;
-  animation-name: ${AppFadeIn};
-  animation-fill-mode: both;
-`;
 
 
 class App extends Component {
@@ -86,7 +73,7 @@ class App extends Component {
   };
   render() {
     return (
-      <MainWrapper>
+      <div>
         <Topper />
         <MenuButton handleMouseDown={this.handleMouseDown}/>
         <Menu handleMouseDown={this.handleMouseDown}
@@ -115,7 +102,7 @@ class App extends Component {
             </Switch>
           <Footer/>
         </Container>
-      </MainWrapper>
+      </div>
     );
   }
 }

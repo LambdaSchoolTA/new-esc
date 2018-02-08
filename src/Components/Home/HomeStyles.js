@@ -1,22 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-
-const HomeFadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 
 export const Main = styled.div`
   background-color: white;
   margin-right: 0;
   margin-left: 0;
-  animation-duration: .5s;
-  animation-name: ${HomeFadeIn};
-  animation-fill-mode: both;
   @media (min-width: 1300px) { margin-right: 50px; margin-left: 50px; }
 `;
 
