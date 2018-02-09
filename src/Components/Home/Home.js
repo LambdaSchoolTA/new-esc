@@ -3,12 +3,14 @@ import { Helmet } from "react-helmet";
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel'; 
 
-import { Main, SaleWrapper, SaleImg, TempurImg, SealyImg, StearnsImg } from './HomeStyles';
+import CarouselSale from './CarouselSale'
+import CarouselImg1 from './CarouselImg1'
+import CarouselImg2 from './CarouselImg2'
+import CarouselImg3 from './CarouselImg3'
 
-import Sealy from '../../images/SealyLifestyleRatio.jpg';
-import Tempur from '../../images/TempurLifestyleRatio.jpg';
-import Stearns from '../../images/StearnsLifestyleRatio.jpg';
-import Sale from '../../images/grandOpening.png';
+import { Main, SaleWrapper, Sale, Tempur, Sealy, Stearns } from './HomeStyles';
+
+
 
 const HomeComponent = () => {
   return (
@@ -28,16 +30,24 @@ const HomeComponent = () => {
         showStatus={false}
       >
         <SaleWrapper>
-          <SaleImg src={Sale} alt="this"/>
+          <Sale>
+            <CarouselSale/>
+          </Sale>
         </SaleWrapper>
         <Link to='/brands/stearns'>
-          <StearnsImg src={Stearns} alt="this"/>
+          <Stearns>
+            <CarouselImg1/>
+          </Stearns>
         </Link>
         <Link to='/brands/tempurpedic'>
-          <TempurImg src={Tempur} alt="this"/>
+          <Tempur>
+            <CarouselImg2/>
+          </Tempur>
         </Link>
         <Link to='/brands/sealy'>
-          <SealyImg src={Sealy} alt="this"/> 
+          <Sealy>
+            <CarouselImg3/> 
+          </Sealy>
         </Link>
       </Carousel>
     </Main>

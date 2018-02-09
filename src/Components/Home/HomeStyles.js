@@ -1,22 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-
-const HomeFadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 
 export const Main = styled.div`
   background-color: white;
   margin-right: 0;
   margin-left: 0;
-  animation-duration: .5s;
-  animation-name: ${HomeFadeIn};
-  animation-fill-mode: both;
   @media (min-width: 1300px) { margin-right: 50px; margin-left: 50px; }
 `;
 
@@ -24,7 +12,7 @@ export const SaleWrapper = styled.div`
   background-color: #eb1c24;
 `;
 
-export const SaleImg = styled.img`
+export const Sale = styled.div`
   max-width: 240px;
   max-height: 240px;
   margin: auto;
@@ -34,7 +22,8 @@ export const SaleImg = styled.img`
   @media(min-width: 1024px) { width: 500px !important; height: 600px; }
 `;
 
-export const StearnsImg = styled.img`
+export const Stearns = styled.div`
+  background-color: white;
   margin: auto;
   max-width: 600px;
   max-height: 1000px;
@@ -42,16 +31,17 @@ export const StearnsImg = styled.img`
   @media(min-width: 1024px) { max-width: 1000px; height: 600px; }
 `;
 
-export const TempurImg = styled.img`
+export const Tempur = styled.div`
   margin: auto;
-  align-self: center;
+  background-color: white;
   max-width: 600px;
   max-height: 1000px;
   @media(min-width: 768px) { max-width: 800px; max-height: 600px; }
   @media(min-width: 1024px) { max-width: 1000px; height: 600px; }
 `;
 
-export const SealyImg = styled.img`
+export const Sealy = styled.div`
+  margin: auto;
   background-color: white;
   max-width: 600px;
   max-height: 1000px;

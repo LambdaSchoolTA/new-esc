@@ -1,0 +1,45 @@
+import React, {Fragment} from 'react';
+import GraphImg from 'graphcms-image';
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag';
+
+
+const Carimg1 = ({ data: { loading, error, Carousel }}) => {
+  if(error) return console.log(error)
+  if(!loading) {
+    return (
+    <Fragment>
+      <GraphImg image={Carousel.pic1} maxWidth={800} withWebp={true} fit="clip"/>
+    </Fragment>
+    )
+  }
+  return null
+}
+
+export const query = gql`
+  query allAssets {
+    Carousel(id:"cjdc1no0pobkl0159tuo2lj52"){
+      sale{
+        width
+        height
+        handle
+      }
+      pic1 {
+        width
+        height
+        handle
+      }
+      pic2 {
+        width
+        height
+        handle
+      }
+      pic3 {
+        width
+        height
+        handle
+      }
+    }
+  }
+`;
+export default graphql(query)(Carimg1);

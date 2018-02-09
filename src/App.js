@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import styled, { injectGlobal, keyframes } from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 import MenuButton from './Components/FlyoutMenu/MenuButton';
 import Menu from './Components/FlyoutMenu/Menu';
