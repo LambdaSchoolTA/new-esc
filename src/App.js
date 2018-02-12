@@ -19,8 +19,8 @@ import BlogComponent from './Components/Blog/Blog';
 import AboutComponent from './Components/About/About';
 
 import SingleBase from './Components/Adjustable/SingleBase';
-import SingleMattress from './Components/SingleMattress/SingleMattress';
-
+// import SingleMattress from './Components/SingleMattress/SingleMattress';
+import SingleMattress from './Components/SingleMattress/Pricing/SingleMattress2';
 import Sealy from './Components/MattressList/Sealy';
 import Tempur from './Components/MattressList/Tempur';
 import Stearns from './Components/MattressList/Stearns';
